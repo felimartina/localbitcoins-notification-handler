@@ -1,0 +1,10 @@
+.vscode/
+*.tfstate*
+terraform.tfvars
+tmp
+
+# python compiled files
+*.pyc
+
+# libraries
+lib/
