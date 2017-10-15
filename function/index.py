@@ -35,6 +35,7 @@ def handler(event, context):
         print 'Mark Notification as read'
         MarkNotificationAsRead(notification['id'])
   except Exception as err:
+      print 'Error while fetching notifications'
       print err
 
 def SendSMS(message):
@@ -44,9 +45,9 @@ def MarkNotificationAsRead(notificationId):
   try:
     conn = api.hmac(HMAC_KEY, HMAC_SECRET)
     endpoint = '/api/notifications/mark_as_read/{0}/'.format(notificationId)
-    print endpoint
     response = conn.call('POST', endpoint).json()
   except Exception as err:
+    print 'Error while marking notification as read'
     print err
 
 def PostAutomaticMessageForNewOffer(contact_id):
@@ -56,4 +57,5 @@ def PostAutomaticMessageForNewOffer(contact_id):
     endpoint = '/api/contact_message_post/{0}/'.format(contact_id)
     response = conn.call('POST', endpoint, { 'msg': message } ).json()
   except Exception as err:
-    print err
+    print 'Error while posting automatic message'
+	print err
