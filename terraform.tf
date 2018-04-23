@@ -97,8 +97,10 @@ resource "aws_lambda_function" "localbtc_notification_handler_lambda" {
       LBC_HMAC_KEY              = "${var.LBC_HMAC_KEY}"
       LBC_HMAC_SECRET           = "${var.LBC_HMAC_SECRET}"
       PHONE_NUMBER              = "${var.PHONE_NUMBER}"
+      ACCOUNT                   = "${var.ACCOUNT}"
       AUTOMATED_MESSAGE_ENGLISH = "${var.AUTOMATED_MESSAGE_ENGLISH}"
       AUTOMATED_MESSAGE_SPANISH = "${var.AUTOMATED_MESSAGE_SPANISH}"
+      NEW_OFFER_SMS_TEMPLATE    = "${var.NEW_OFFER_SMS_TEMPLATE}"
     }
   }
 }

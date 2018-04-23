@@ -13,7 +13,7 @@ variable "APP_NAME" {
 }
 
 variable "SCHEDULE_EXPRESSION" {
-  default = "rate(5 minutes)"
+  default = "rate(2 minutes)"
 }
 
 variable "LAMBDA_ZIP_NAME" {
@@ -27,3 +27,9 @@ variable "AUTOMATED_MESSAGE_ENGLISH" {
 variable "AUTOMATED_MESSAGE_SPANISH" {
   default = "MENSAJE AUTOMATICO ===> Hola, gracias por abrir un trade con nosotros. Nos estaremos comunicando con ud a la brevedad!!!"
 }
+
+variable "NEW_OFFER_SMS_TEMPLATE" {
+  default = "Tienes una nueva oferta para ###OFFER_TYPE### BTC.\nCotizacion ###BTC_AMOUNT###BTC = ###FIAT_AMOUNT######CURRENCY###"
+}
+
+variable "ACCOUNT" {}
