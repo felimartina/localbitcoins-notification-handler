@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
     bucket  = "felimartina.terraform"
-    key     = "localbitcoin-notifier/envs/dev/terraform.tfstate"
+    key     = "localbtc-notification-handler-jccastagno/envs/dev/terraform.tfstate"
     region  = "us-east-1"
     profile = "pipe"
   }
@@ -17,7 +17,7 @@ data "terraform_remote_state" "network" {
 
   config {
     bucket  = "felimartina.terraform"
-    key     = "localbitcoin-notifier/envs/dev/terraform.tfstate"
+    key     = "localbtc-notification-handler-jccastagno/envs/dev/terraform.tfstate"
     region  = "us-east-1"
     profile = "pipe"
   }
@@ -96,7 +96,7 @@ resource "aws_lambda_function" "localbtc_notification_handler_lambda" {
     variables = {
       LBC_HMAC_KEY              = "${var.LBC_HMAC_KEY}"
       LBC_HMAC_SECRET           = "${var.LBC_HMAC_SECRET}"
-      PHONE_NUMBER              = "${var.PHONE_NUMBER}"
+      PHONE_NUMBERS             = "${var.PHONE_NUMBERS}"
       ACCOUNT                   = "${var.ACCOUNT}"
       AUTOMATED_MESSAGE_ENGLISH = "${var.AUTOMATED_MESSAGE_ENGLISH}"
       AUTOMATED_MESSAGE_SPANISH = "${var.AUTOMATED_MESSAGE_SPANISH}"

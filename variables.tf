@@ -2,7 +2,7 @@
 variable "LBC_HMAC_KEY" {}
 
 variable "LBC_HMAC_SECRET" {}
-variable "PHONE_NUMBER" {}
+variable "PHONE_NUMBERS" {}
 
 variable "REGION" {
   default = "us-east-1"
